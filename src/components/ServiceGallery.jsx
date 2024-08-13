@@ -9,12 +9,12 @@ const services = [
   {
     title: "Service 2",
     description: "Brief description of the service.",
-    imageUrl: "https://i.ibb.co/fSM3sdK/boliviainteligente-jk-nk-EXo4a-Y-unsplash.jpg",
+    imageUrl: "https://i.ibb.co/yYs9jnB/sander-weeteling-KABfju-SOx74-unsplash.jpg",
   },
   {
     title: "Service 3",
     description: "Brief description of the service.",
-    imageUrl: "https://i.ibb.co/brBWPXM/brigitta-schneiter-Bb-Dv-V879ar-U-unsplash.jpg",
+    imageUrl: "https://i.ibb.co/KjdSyP6/austin-distel-waw-Ef-Ydpkag-unsplash.jpg",
   },
   {
     title: "Service 4",
@@ -62,7 +62,7 @@ const ServiceGallery = () => {
       {services.map((service, index) => (
         <div
           key={index}
-          className={`relative z-20 w-[443] h-[500px] overflow-hidden shadow-lg transition-transform duration-300 ease-in-out ${hoveredIndex !== null && hoveredIndex !== index ? "opacity-0" : "opacity-100"
+          className={`relative z-20 w-[443] h-[403px] overflow-hidden shadow-lg transition-transform duration-300 ease-in-out ${hoveredIndex !== null && hoveredIndex !== index ? "opacity-0" : "opacity-100"
             }`}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
