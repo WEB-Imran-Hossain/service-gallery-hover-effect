@@ -48,7 +48,7 @@ const ServiceGallery = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className="relative flex flex-wrap justify-center mb-10">
+    <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-4 m-20">
       {/* Background image div is always present */}
       <div
         className="fixed inset-0 z-10 bg-black bg-opacity-70 transition-opacity duration-300 ease-in-out"
@@ -62,18 +62,16 @@ const ServiceGallery = () => {
       {services.map((service, index) => (
         <div
           key={index}
-          className={`relative z-20 w-80 h-80 overflow-hidden shadow-lg transition-transform duration-300 ease-in-out ${
-            hoveredIndex !== null && hoveredIndex !== index ? "opacity-0" : "opacity-100"
-          }`}
+          className={`relative z-20 h-[503px] overflow-hidden shadow-lg transition-transform duration-300 ease-in-out ${hoveredIndex !== null && hoveredIndex !== index ? "opacity-0" : "opacity-100"
+            }`}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <img
             src={service.imageUrl}
             alt={service.title}
-            className={`w-full h-full object-cover transition-transform duration-300 ease-in-out ${
-              hoveredIndex === index ? "scale-150 z-10" : "scale-100"
-            }`}
+            className={`w-full h-full object-cover transition-transform duration-300 ease-in-out ${hoveredIndex === index ? "scale-150 z-10" : "scale-100"
+              }`}
           />
           {hoveredIndex === index && (
             <div className="absolute inset-0 bg-black bg-opacity-70 text-white flex flex-col items-center justify-center p-4 opacity-100 transition-opacity duration-300 ease-in-out">
