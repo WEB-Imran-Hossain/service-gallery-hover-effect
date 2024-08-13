@@ -48,10 +48,10 @@ const ServiceGallery = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-4 m-20">
+    <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-4 m-5">
       {/* Background image div is always present */}
       <div
-        className="fixed inset-0 z-10 bg-black bg-opacity-70 transition-opacity duration-300 ease-in-out"
+        className="fixed inset-0 z-10  transition-opacity duration-300 ease-in-out mx-5 my-14"
         style={{
           backgroundImage: hoveredIndex !== null ? `url(${services[hoveredIndex].imageUrl})` : "none",
           backgroundSize: "cover",
@@ -62,7 +62,7 @@ const ServiceGallery = () => {
       {services.map((service, index) => (
         <div
           key={index}
-          className={`relative z-20 h-[503px] overflow-hidden shadow-lg transition-transform duration-300 ease-in-out ${hoveredIndex !== null && hoveredIndex !== index ? "opacity-0" : "opacity-100"
+          className={`relative z-20 w-[443] h-[500px] overflow-hidden shadow-lg transition-transform duration-300 ease-in-out ${hoveredIndex !== null && hoveredIndex !== index ? "opacity-0" : "opacity-100"
             }`}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
