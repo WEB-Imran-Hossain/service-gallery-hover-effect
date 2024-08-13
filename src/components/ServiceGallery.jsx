@@ -64,7 +64,7 @@ const ServiceGallery = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className={`relative z-20  lg:w-[470px] lg:h-[413px] -mt-5 shadow-lg  transition-opacity duration-300 ease-in-out ${hoveredIndex !== null && hoveredIndex !== index ? "opacity-0" : "opacity-100"
+            className={`relative z-20  xl:w-[470px] xl:h-[413px] -mt-5 shadow-lg  transition-opacity duration-300 ease-in-out ${hoveredIndex !== null && hoveredIndex !== index ? "opacity-0" : "opacity-100"
               }`}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
@@ -72,7 +72,7 @@ const ServiceGallery = () => {
             <img
               src={service.imageUrl}
               alt={service.title}
-              className={`lg:w-[470px] lg:h-[413px] object-cover transition-transform  duration-300 ease-in-out ${hoveredIndex === index ? "scale-100 " : "scale-100"
+              className={`xl:w-[470px] xl:h-[413px] object-cover transition-transform  duration-300 ease-in-out ${hoveredIndex === index ? "scale-100 " : "scale-100"
                 }`}
             />
             {hoveredIndex === index && (
