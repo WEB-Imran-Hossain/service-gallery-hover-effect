@@ -48,39 +48,42 @@ const ServiceGallery = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className="relative grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-4 m-5">
-      {/* Background image div is always present */}
-      <div
-        className="fixed inset-0 z-10  transition-opacity duration-300 ease-in-out mx-5 my-14"
-        style={{
-          backgroundImage: hoveredIndex !== null ? `url(${services[hoveredIndex].imageUrl})` : "none",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      />
+    <div className="relative m-5">
+      <h2 className="text-3xl font-bold text-center m-5">Our Services</h2>
 
-      {services.map((service, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 ">
         <div
-          key={index}
-          className={`relative z-20 w-[443] h-[403px] overflow-hidden shadow-lg transition-transform duration-300 ease-in-out ${hoveredIndex !== null && hoveredIndex !== index ? "opacity-0" : "opacity-100"
-            }`}
-          onMouseEnter={() => setHoveredIndex(index)}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
-          <img
-            src={service.imageUrl}
-            alt={service.title}
-            className={`w-full h-full object-cover transition-transform duration-300 ease-in-out ${hoveredIndex === index ? "scale-150 z-10" : "scale-100"
+          className="fixed inset-0 z-10 transition-opacity duration-300 ease-in-out mx-5 my-14 "
+          style={{
+            backgroundImage: hoveredIndex !== null ? `url(${services[hoveredIndex].imageUrl})` : "none",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+
+        {services.map((service, index) => (
+          <div
+            key={index}
+            className={`relative z-20  lg:w-[470px] lg:h-[413px] -mt-5 shadow-lg  transition-opacity duration-300 ease-in-out ${hoveredIndex !== null && hoveredIndex !== index ? "opacity-0" : "opacity-100"
               }`}
-          />
-          {hoveredIndex === index && (
-            <div className="absolute inset-0 bg-black bg-opacity-70 text-white flex flex-col items-center justify-center p-4 opacity-100 transition-opacity duration-300 ease-in-out">
-              <h3 className="text-xl font-semibold">{service.title}</h3>
-              <p className="mt-2">{service.description}</p>
-            </div>
-          )}
-        </div>
-      ))}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <img
+              src={service.imageUrl}
+              alt={service.title}
+              className={`lg:w-[470px] lg:h-[413px] object-cover transition-transform  duration-300 ease-in-out ${hoveredIndex === index ? "scale-100 " : "scale-100"
+                }`}
+            />
+            {hoveredIndex === index && (
+              <div className="absolute inset-0 bg-black bg-opacity-70 text-white flex flex-col items-center justify-center p-4 transition-opacity duration-300 ease-in-out">
+                <h3 className="text-xl font-semibold">{service.title}</h3>
+                <p className="mt-2">{service.description}</p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
